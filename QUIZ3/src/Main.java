@@ -18,7 +18,7 @@ public class Main {
              isBlank=false;
              isNumberBeginning=false;
 
-             System.out.println("請輸入密碼: ");
+             System.out.print("請輸入密碼: ");
              str=sc.nextLine();
               //程式
              for (int i=0 ;i<str.length();i++){
@@ -38,13 +38,14 @@ public class Main {
                  if(!isBlank && a==' ')
                      isBlank=true;
              }
-             isPWFormatted=isDigit && isLowerCase && isUpperCase &&(!isNumberBeginning) &&(isBlank);
-             if(isPWFormatted)System.out.println("密碼格式正確");
+             isPWFormatted=isDigit && isLowerCase && isUpperCase &&(!isNumberBeginning) &&(!isBlank);
+
              if(isNumberBeginning)System.out.println("密碼不能數字開頭");
              if(isBlank)System.out.println("密碼不能含空白");
              if(!isDigit)System.out.println("密碼應該包含數字");
              if(!isLowerCase)System.out.println("密碼應該包含小寫");
              if(!isUpperCase)System.out.println("密碼應該包含大寫");
+             if(isPWFormatted) isPWFormatted=true;
         }while(!isPWFormatted);
     }
 }
