@@ -55,9 +55,13 @@ public class Main {
             isEmailFormatted = false;
             System.out.println("請輸入E-MAIL: ");
             str = sc.next();
-            // "\\w@(\\w.){0,}\\w"
-            // "[a-zA-Z0-9]+@[a-zA-Z0-9]+[\\.]+[a-zA-Z0-9\\.]+"
-            if (str.matches("[a-zA-Z0-9]+@[a-zA-Z0-9\\.]+[a-zA-Z0-9]")) {
+            // "\\w@(\\w.){0,}\\w"  \\跳脫字元
+            // \\w英文或數字
+            // \\d數字
+            // \\s空白字元
+            // 大寫"非"
+     
+            if (str.matches("\\w@(\\w.){0,}\\w")) {
                 isEmailFormatted = true;
             }
             if (!isEmailFormatted) System.out.print("電子郵件應該是xxx@xxx.xxx.xxx");
