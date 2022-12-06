@@ -45,7 +45,7 @@ public class Main {
              if(!isDigit)System.out.println("密碼應該包含數字");
              if(!isLowerCase)System.out.println("密碼應該包含小寫");
              if(!isUpperCase)System.out.println("密碼應該包含大寫");
-             if(isPWFormatted) isPWFormatted=true;
+
         }while(!isPWFormatted);
     }
 }
