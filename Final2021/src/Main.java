@@ -34,7 +34,7 @@ abstract class Person implements WeightControl{
     //(3)
     public double weight(){return weight;}
     double stdWeight(){return (height-80)*0.7;};
-    public String toString(){return "性別: 男, 身高:"+height+", 體重, 標準體重:"+stdWeight();}
+    public String toString(){return "性別: 男, 身高:"+height+", 體重:"+weight()+", 標準體重:"+stdWeight();}
 }
  class Women extends Person{
     Women(double height, double weight){
@@ -44,7 +44,7 @@ abstract class Person implements WeightControl{
     //(4)
     public double weight(){return weight;}
     double stdWeight(){return (height-70)*0.6;};
-    public String toString(){return "性別: 女, 身高:"+height+", 體重, 標準體重:"+stdWeight();}
+    public String toString(){return "性別: 女, 身高:"+height+",體重:"+weight()+", 標準體重:"+stdWeight();}
 }
 public class Main {
     public static void main(String[] args) {
@@ -94,9 +94,12 @@ public class Main {
                 if (!isBlank && ch == ' ')
                     isBlank = true;
             }
+            if (isNumberBeginning) System.out.println("密碼不能數字開頭");
+            if (isBlank) System.out.println("密碼不能含空白");
+            if (!isDigit) System.out.println("密碼應該包含數字");
 
             isPWFormatted=isDigit&&isAalphabet&&!isNumberBeginning&&!isBlank;
-            if(!isPWFormatted) System.out.println("請在輸入一遍");
+            if(!isPWFormatted) System.out.println("請再輸入一遍");
             else System.out.println("密碼格式正確");
         }while(!isPWFormatted);
     }
